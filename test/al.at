@@ -1,0 +1,29 @@
+# Copyright 2017 (c) Michael Thomas (malinka) <malinka@entropy-development.com>
+# Distributed under the terms of the GNU Affero General Public License v3
+
+AT_BANNER([AL Tests])
+
+AT_SETUP([Device Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([al-device], [], [ignore], [ignore])
+AT_CLEANUP
+
+AT_SETUP([Context Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([al-context], [], [ignore], [ignore])
+AT_CLEANUP
+
+AT_SETUP([Buffer Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([al-buffer], [], [ignore], [ignore])
+AT_CLEANUP
+
+AT_SETUP([Source Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([al-source], [], [ignore], [ignore])
+AT_CLEANUP
+
+AT_SETUP([Listener Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([al-listener], [], [ignore], [ignore])
+AT_CLEANUP

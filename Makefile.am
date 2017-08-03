@@ -4,23 +4,63 @@
 ACLOCAL_AMFLAGS = -Im4
 AM_CPPFLAGS = -I$(srcdir)/src
 
-mainheadersdir = $(includedir)/Aoede
+mainheadersdir = $(includedir)/Entropy/Aoede
 mainheaders_HEADERS = \
-	src/Exception.hh
+	src/Exception.hh \
+	src/Flac.hh \
+	src/Types.hh
+
+alheadersdir = $(includedir)/Entropy/Aoede/AL
+alheaders_HEADERS = \
+	src/AL/Buffer.hh \
+	src/AL/Context.hh \
+	src/AL/Device.hh \
+	src/AL/Listener.hh \
+	src/AL/Source.hh
 
 lib_LTLIBRARIES = libaoede.la
 
-libaoede_la_SOURCES =
+libaoede_la_SOURCES = \
+	src/AL/Buffer.cc \
+	src/AL/Context.cc \
+	src/AL/Device.cc \
+	src/AL/Listener.cc \
+	src/AL/Source.cc \
+	src/Flac.cc
 libaoede_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
 
 if GTEST
+check_PROGRAMS += \
+	al-buffer \
+	al-context \
+	al-device \
+	al-listener \
+	al-source
+
+gtestLDADD = $(GTEST_LIBS) -lgtest_main libaoede.la
+
+al_buffer_SOURCES = test/AL/buffer.cc
+al_buffer_LDADD = $(gtestLDADD)
+
+al_context_SOURCES = test/AL/context.cc
+al_context_LDADD = $(gtestLDADD)
+
+al_device_SOURCES = test/AL/device.cc
+al_device_LDADD = $(gtestLDADD)
+
+al_source_SOURCES = test/AL/source.cc
+al_source_LDADD = $(gtestLDADD)
+
+al_listener_SOURCES = test/AL/listener.cc
+al_listener_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
 
-TESTSUITE_FILES =
+TESTSUITE_FILES = \
+	$(srcdir)/test/al.at
 
 EXTRA_DIST = $(TESTSUITE_FILES) \
 	$(srcdir)/test/testsuite.at \
