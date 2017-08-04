@@ -9,14 +9,12 @@
 
 #	include <AL/al.h>
 #	include <AL/alc.h>
-#	include <AL/alut.h>
 
 	namespace Entropy
 	{
 		namespace Aoede
 		{
 			ENTROPY_EXCEPTION_BASE(Exception, "Aoede Exception");
-			ENTROPY_ERROR_INFO(AlError, const char *);
 			ENTROPY_ERROR_INFO(AlErrorCode, ALenum);
 		}
 	}
@@ -28,8 +26,7 @@
 				::boost::throw_function(BOOST_CURRENT_FUNCTION) << \
 				::boost::throw_file(__FILE__) << \
 				::boost::throw_line((int)__LINE__) << \
-				::Entropy::Aoede::AlErrorCode(status) << \
-				::Entropy::Aoede::AlError(alutGetErrorString(status))); \
+				::Entropy::Aoede::AlErrorCode(status)); \
 		}
 
 #	define CHECK_AL_ERRORS_WITH(x, z) \
@@ -39,8 +36,7 @@
 				::boost::throw_function(BOOST_CURRENT_FUNCTION) << \
 				::boost::throw_file(__FILE__) << \
 				::boost::throw_line((int)__LINE__) << \
-				::Entropy::Aoede::AlErrorCode(status) << \
-				::Entropy::Aoede::AlError(alutGetErrorString(status)) << \
+				::Entropy::Aoede::AlErrorCode(status) \
 				z);\
 		}
 
