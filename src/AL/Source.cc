@@ -74,24 +74,6 @@ bool Source::isPaused() const
 	return getState() == State::Paused;
 }
 
-void Source::Play()
-{
-	alSourcePlay(_handle);
-	CHECK_AL_ERRORS("Failed to play source");
-}
-
-void Source::Stop()
-{
-	alSourceStop(_handle);
-	CHECK_AL_ERRORS("Failed to stop source");
-}
-
-void Source::Pause()
-{
-	alSourcePause(_handle);
-	CHECK_AL_ERRORS("Failed to pause source");
-}
-
 Dimension Source::Pitch() const
 {
 	Dimension ret;

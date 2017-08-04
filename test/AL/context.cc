@@ -11,8 +11,7 @@ using namespace std;
 
 namespace {
 	TEST(Context, MakeCurrent) {
-		Device d;
-		Context a(d), b(d), c(d);
+		Context a, b, c;
 
 		a.makeCurrent();
 		EXPECT_TRUE(a.isCurrent());

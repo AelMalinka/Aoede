@@ -13,11 +13,7 @@ using namespace std;
 
 namespace {
 	TEST(Source, Create) {
-		Device d;
-		Context c(d);
-
-		c.makeCurrent();
-
+		Context c;
 		Source s;
 
 		EXPECT_NE(s.Handle(), 0ul);

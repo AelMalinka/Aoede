@@ -6,7 +6,6 @@
 #	define ENTROPY_AOEDE_AL_CONTEXT_INC
 
 #	include "Device.hh"
-#	include "Listener.hh"
 
 	namespace Entropy
 	{
@@ -17,15 +16,14 @@
 				class Context
 				{
 					public:
-						explicit Context(Device &);
+						Context();
+						explicit Context(const std::string &);
 						~Context();
 						void makeCurrent();
 						bool isCurrent() const;
-						Listener *operator -> ();
-						const Listener *operator -> () const;
 					private:
 						ALCcontext *_handle;
-						Listener _listener;
+						Device _device;
 				};
 			}
 		}

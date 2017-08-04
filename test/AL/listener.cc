@@ -3,6 +3,7 @@
 */
 
 #include "AL/Context.hh"
+#include "AL/Listener.hh"
 #include <gtest/gtest.h>
 
 using namespace Entropy::Aoede::AL;
@@ -12,18 +13,18 @@ using namespace std;
 
 namespace {
 	TEST(Listener, Create) {
-		Device d;
-		Context c(d);
+		Context c;
+		Listener l;
 
 		Vertex pos(0.0f, 0.0f, 0.0f),
 				vel(0.0f, 0.0f, 0.0f),
 				at(0.0f, 0.0f, -1.0f),
 				up(0.0f, 1.0f, 0.0f);
 
-		EXPECT_EQ(c->Gain(), 1.0f);
-		EXPECT_EQ(c->Position(), pos);
-		EXPECT_EQ(c->Velocity(), vel);
-		EXPECT_EQ(c->LookAt(), at);
-		EXPECT_EQ(c->Up(), up);
+		EXPECT_EQ(l.Gain(), 1.0f);
+		EXPECT_EQ(l.Position(), pos);
+		EXPECT_EQ(l.Velocity(), vel);
+		EXPECT_EQ(l.LookAt(), at);
+		EXPECT_EQ(l.Up(), up);
 	}
 }

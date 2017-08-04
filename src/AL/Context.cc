@@ -7,14 +7,28 @@
 using namespace Entropy::Aoede::AL;
 using namespace std;
 
-Context::Context(Device &d)
-	: _handle(nullptr), _listener()
+Context::Context()
+	: _handle(nullptr), _device()
 {
 	// 2017-08-02 AMR TODO: decide on attribute options
-	_handle = alcCreateContext(d.Handle(), nullptr);
+	_handle = alcCreateContext(_device.Handle(), nullptr);
 
 	if(!_handle)
 		ENTROPY_THROW(Exception("Failed to create context"));
+
+	makeCurrent();
+}
+
+Context::Context(const string &name)
+	: _handle(nullptr), _device(name)
+{
+	// 2017-08-02 AMR TODO: decide on attribute options
+	_handle = alcCreateContext(_device.Handle(), nullptr);
+
+	if(!_handle)
+		ENTROPY_THROW(Exception("Failed to create context"));
+
+	makeCurrent();
 }
 
 Context::~Context()
@@ -32,17 +46,4 @@ void Context::makeCurrent()
 bool Context::isCurrent() const
 {
 	return alcGetCurrentContext() == _handle;
-}
-
-Listener *Context::operator -> ()
-{
-	makeCurrent();
-	return &_listener;
-}
-
-const Listener *Context::operator -> () const
-{
-	if(!isCurrent())
-		ENTROPY_THROW(Exception("unable to make context current"));
-	return &_listener;
 }

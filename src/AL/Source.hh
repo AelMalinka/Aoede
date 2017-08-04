@@ -34,9 +34,6 @@
 						bool isPlaying() const;
 						bool isStopped() const;
 						bool isPaused() const;
-						void Play();
-						void Stop();
-						void Pause();
 						Dimension Pitch() const;
 						Dimension Gain() const;
 						bool Looping() const;
