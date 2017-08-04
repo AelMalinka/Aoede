@@ -6,6 +6,7 @@ AM_CPPFLAGS = -I$(srcdir)/src
 
 mainheadersdir = $(includedir)/Entropy/Aoede
 mainheaders_HEADERS = \
+	src/Application.hh \
 	src/Exception.hh \
 	src/Flac.hh \
 	src/Types.hh
@@ -26,6 +27,7 @@ libaoede_la_SOURCES = \
 	src/AL/Device.cc \
 	src/AL/Listener.cc \
 	src/AL/Source.cc \
+	src/Application.cc \
 	src/Flac.cc
 libaoede_la_LDFLAGS = -version-info 0
 
@@ -37,7 +39,8 @@ check_PROGRAMS += \
 	al-context \
 	al-device \
 	al-listener \
-	al-source
+	al-source \
+	basic-application
 
 gtestLDADD = $(GTEST_LIBS) -lgtest_main libaoede.la
 
@@ -55,6 +58,9 @@ al_source_LDADD = $(gtestLDADD)
 
 al_listener_SOURCES = test/AL/listener.cc
 al_listener_LDADD = $(gtestLDADD)
+
+basic_application_SOURCES = test/basic/application.cc
+basic_application_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite
