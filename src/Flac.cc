@@ -9,11 +9,14 @@ using namespace std;
 
 Flac::abort_t Flac::Abort;
 
+// 2017-08-03 AMR TODO: tie repeat to whether there is input ready
 Flac::Flac(const string &name, const function<void(const Flac &, const int32_t *const [])> &cb)
-	: RepeatedTask(), File(), _cb(cb)
+	: Timer(chrono::milliseconds(1)), File(), _cb(cb)
 {
 	init_ogg(name);
-	process_until_end_of_metadata();
+	if(!process_until_end_of_metadata()) {
+		ENTROPY_THROW(Exception("Failed to initialize Flac"));
+	}
 }
 
 Flac::~Flac()

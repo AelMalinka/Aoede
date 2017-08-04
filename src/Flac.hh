@@ -7,7 +7,7 @@
 
 #	include "Exception.hh"
 #	include <FLAC++/decoder.h>
-#	include <Entropy/Tethys/RepeatedTask.hh>
+#	include <Entropy/Tethys/Timer.hh>
 #	include <cstdint>
 
 	namespace Entropy
@@ -15,7 +15,7 @@
 		namespace Aoede
 		{
 			class Flac :
-				public Tethys::RepeatedTask,
+				public Tethys::Timer,
 				protected FLAC::Decoder::File
 			{
 				public:
