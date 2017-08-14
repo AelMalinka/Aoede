@@ -35,7 +35,13 @@ libaoede_la_SOURCES = \
 	src/Sound.cc
 libaoede_la_LDFLAGS = -version-info 0
 
+bin_PROGRAMS = \
+	play
+
 check_PROGRAMS =
+
+play_SOURCES = examples/play.cc
+play_LDADD = libaoede.la
 
 if GTEST
 check_PROGRAMS += \
