@@ -8,6 +8,7 @@
 #	include "Flac.hh"
 #	include "Player.hh"
 #	include "AL/Buffer.hh"
+#	include <list>
 
 	namespace Entropy
 	{
@@ -30,8 +31,9 @@
 					Flac _data;
 					Player _player;
 					std::vector<AL::Source> _sources;
-					std::vector<AL::Buffer> _buffers;
+					std::list<AL::Buffer> _buffers;
 					Tethys::UV::Loop *_loop;
+					bool _playing;
 			};
 		}
 	}

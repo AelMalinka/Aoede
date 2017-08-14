@@ -10,7 +10,7 @@ using namespace Entropy::Aoede;
 using namespace std;
 
 Sound::Sound(const string &name)
-	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _loop(nullptr)
+	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _loop(nullptr), _playing(false)
 {}
 
 Sound::~Sound() = default;
@@ -31,27 +31,36 @@ void Sound::operator () ()
 	_loop->Add(_data);
 }
 
-#include <iostream>
-
 void Sound::DataCb(const Flac &flac, const int32_t *const buffer[])
 {
 	if(_sources.size() < flac.Channels()) {
 		for(auto x = _sources.size(); x < flac.Channels(); x++) {
 			_sources.emplace_back();
-			cout << "adding source: " << _sources.back().Handle() << endl;
 		}
 	}
 
 	for(auto x = 0u; x < flac.Channels(); x++) {
+		int16_t *buff = new int16_t[flac.BlockSize()];
+
+		for(auto y = 0u; y < flac.BlockSize(); y++) {
+			buff[y] = buffer[x][y];
+		}
+
 		_buffers.emplace_back();
-		cout << "setting buffer " << _buffers.back().Handle() << " to source " << _sources[x].Handle() << endl;
-		_sources[x].setBuffer(_buffers.back());
-		_buffers.back().setData(buffer[x], flac.BlockSize(), flac.Frequency());
+		_buffers.back().setData(buff, flac.BlockSize() * flac.BitRate() / 8, flac.Frequency());
+		_sources[x].queueBuffer(_buffers.back());
+
+		delete[] buff;
 	}
 
-	for(auto &s :  _sources) {
-		_player.Add(s);
-	}
+	if(!_playing) {
+		for(auto &s : _sources) {
+			_player.Add(s);
+		}
 
-	_loop->Add(_player);
+		_player.Play();
+		_loop->Add(_player);
+
+		_playing = true;
+	}
 }
