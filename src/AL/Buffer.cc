@@ -11,11 +11,18 @@ using namespace std;
 Buffer::Buffer()
 {
 	alGenBuffers(1, &_handle);
+	CHECK_AL_ERRORS("Failed to generate buffer");
 }
 
 Buffer::~Buffer()
 {
 	alDeleteBuffers(1, &_handle);
+	alGetError();
+}
+
+Buffer::Buffer(Buffer &&o)
+{
+	swap(_handle, o._handle);
 }
 
 const ALuint &Buffer::Handle() const

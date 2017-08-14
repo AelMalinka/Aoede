@@ -19,6 +19,12 @@ Source::Source()
 Source::~Source()
 {
 	alDeleteSources(1, &_handle);
+	alGetError();
+}
+
+Source::Source(Source &&o)
+{
+	swap(_handle, o._handle);
 }
 
 const ALuint &Source::Handle() const
@@ -32,12 +38,25 @@ void Source::setBuffer(const Buffer &buffer)
 	CHECK_AL_ERRORS("Failed to set buffer");
 }
 
+void Source::queueBuffer(const Buffer &buffer)
+{
+	alSourceQueueBuffers(_handle, 1, const_cast<ALuint *>(&buffer.Handle()));
+	CHECK_AL_ERRORS("Failed to queue buffer");
+}
+
+void Source::unqueueBuffer(const Buffer &buffer)
+{
+	alSourceUnqueueBuffers(_handle, 1, const_cast<ALuint *>(&buffer.Handle()));
+	CHECK_AL_ERRORS("Failed to unqueue buffer");
+}
+
 Source::State Source::getState() const
 {
 	ALint i;
 	State ret;
 
 	alGetSourcei(_handle, AL_SOURCE_STATE, &i);
+	CHECK_AL_ERRORS("Failed to get source state");
 
 	switch(i) {
 		case AL_INITIAL:

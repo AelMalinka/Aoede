@@ -18,6 +18,8 @@
 					public:
 						Buffer();
 						~Buffer();
+						Buffer(const Buffer &) = delete;
+						Buffer(Buffer &&);
 						const ALuint &Handle() const;
 						void setData(const void *, const std::size_t, const std::size_t);
 					private:

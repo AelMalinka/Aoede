@@ -26,6 +26,8 @@
 					public:
 						Source();
 						~Source();
+						Source(const Source &) = delete;
+						Source(Source &&);
 						const ALuint &Handle() const;
 						void setBuffer(const Buffer &);
 						void queueBuffer(const Buffer &);
