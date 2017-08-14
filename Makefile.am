@@ -30,6 +30,7 @@ libaoede_la_SOURCES = \
 	src/AL/Listener.cc \
 	src/AL/Source.cc \
 	src/Application.cc \
+	src/Exception.cc \
 	src/Flac.cc \
 	src/Player.cc \
 	src/Sound.cc
