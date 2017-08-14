@@ -9,6 +9,8 @@ mainheaders_HEADERS = \
 	src/Application.hh \
 	src/Exception.hh \
 	src/Flac.hh \
+	src/Player.hh \
+	src/Sound.hh \
 	src/Types.hh
 
 alheadersdir = $(includedir)/Entropy/Aoede/AL
@@ -28,7 +30,9 @@ libaoede_la_SOURCES = \
 	src/AL/Listener.cc \
 	src/AL/Source.cc \
 	src/Application.cc \
-	src/Flac.cc
+	src/Flac.cc \
+	src/Player.cc \
+	src/Sound.cc
 libaoede_la_LDFLAGS = -version-info 0
 
 check_PROGRAMS =
