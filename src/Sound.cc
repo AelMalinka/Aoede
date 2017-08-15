@@ -10,17 +10,15 @@ using namespace Entropy::Aoede;
 using namespace std;
 
 Sound::Sound(const string &name)
-	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _loop(nullptr), _playing(false)
+	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _loop(nullptr), _playing(false), _done(false)
 {}
 
 Sound::~Sound() = default;
 
-void Sound::Added(Tethys::UV::Loop &loop)
+void Sound::Stop()
 {
-	_loop = &loop;
-
-	// 2017-08-03 AMR HACK: back out into typical uv_work paths
-	throw bad_cast();
+	_player.Stop();
+	_done = true;
 }
 
 void Sound::operator () ()
@@ -31,8 +29,20 @@ void Sound::operator () ()
 	_loop->Add(_data);
 }
 
+void Sound::Added(Tethys::UV::Loop &loop)
+{
+	_loop = &loop;
+
+	// 2017-08-03 AMR HACK: back out into typical uv_work paths
+	throw bad_cast();
+}
+
 void Sound::DataCb(const Flac &flac, const int32_t *const buffer[])
 {
+	if(_done) {
+		throw Flac::Abort;
+	}
+
 	if(_sources.size() < flac.Channels()) {
 		for(auto x = _sources.size(); x < flac.Channels(); x++) {
 			_sources.emplace_back();

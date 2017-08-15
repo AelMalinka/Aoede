@@ -22,6 +22,7 @@
 					explicit Sound(const std::string &);
 					virtual ~Sound();
 					virtual void operator () ();
+					virtual void Stop();
 				protected:
 					// 2017-08-03 AMR TODO: make interface more generic
 					virtual void Added(Tethys::UV::Loop &);
@@ -34,6 +35,7 @@
 					std::list<AL::Buffer> _buffers;
 					Tethys::UV::Loop *_loop;
 					bool _playing;
+					bool _done;
 			};
 		}
 	}
