@@ -36,7 +36,7 @@ libaoede_la_SOURCES = \
 	src/Sound.cc
 libaoede_la_LDFLAGS = -version-info 0
 
-bin_PROGRAMS = \
+noinst_PROGRAMS = \
 	play
 
 check_PROGRAMS =
