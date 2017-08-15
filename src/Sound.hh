@@ -20,6 +20,7 @@
 			{
 				public:
 					explicit Sound(const std::string &);
+					Sound(const std::string &, bool);
 					virtual ~Sound();
 					virtual void operator () ();
 					virtual void Stop();
@@ -33,6 +34,7 @@
 					Player _player;
 					std::vector<AL::Source> _sources;
 					std::list<AL::Buffer> _buffers;
+					bool _looping;
 					Tethys::UV::Loop *_loop;
 					bool _playing;
 					bool _done;

@@ -10,7 +10,11 @@ using namespace Entropy::Aoede;
 using namespace std;
 
 Sound::Sound(const string &name)
-	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _loop(nullptr), _playing(false), _done(false)
+	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _looping(false), _loop(nullptr), _playing(false), _done(false)
+{}
+
+Sound::Sound(const string &name, bool looping)
+	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _looping(looping), _loop(nullptr), _playing(false), _done(false)
 {}
 
 Sound::~Sound() = default;
@@ -46,6 +50,7 @@ void Sound::DataCb(const Flac &flac, const int32_t *const buffer[])
 	if(_sources.size() < flac.Channels()) {
 		for(auto x = _sources.size(); x < flac.Channels(); x++) {
 			_sources.emplace_back();
+			_sources.back().setLooping(_looping);
 		}
 	}
 
