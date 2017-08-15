@@ -10,11 +10,16 @@ using namespace Entropy::Aoede::AL;
 using namespace testing;
 using namespace std;
 
+#define TEST_BEGIN try {
+#define TEST_END } catch(exception &e) { FAIL() << e << endl; }
+
 namespace {
 	TEST(Buffer, Create) {
-		Context c();
-		Buffer b;
+		TEST_BEGIN
+			Context c;
+			Buffer b;
 
-		EXPECT_NE(b.Handle(), 0ul);
+			EXPECT_NE(b.Handle(), 0ul);
+		TEST_END
 	}
 }

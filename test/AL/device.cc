@@ -9,16 +9,23 @@ using namespace Entropy::Aoede::AL;
 using namespace testing;
 using namespace std;
 
+#define TEST_BEGIN try {
+#define TEST_END } catch(exception &e) { FAIL() << e << endl; }
+
 namespace {
 	TEST(Device, Default) {
-		Device d;
+		TEST_BEGIN
+			Device d;
 
-		EXPECT_NE(d.Handle(), nullptr);
+			EXPECT_NE(d.Handle(), nullptr);
+		TEST_END
 	}
 
 	TEST(Device, Soft) {
-		Device d("OpenAL Soft");
+		TEST_BEGIN
+			Device d("OpenAL Soft");
 
-		EXPECT_NE(d.Handle(), nullptr);
+			EXPECT_NE(d.Handle(), nullptr);
+		TEST_END
 	}
 }

@@ -11,20 +11,25 @@ using namespace Entropy::Aoede;
 using namespace testing;
 using namespace std;
 
+#define TEST_BEGIN try {
+#define TEST_END } catch(exception &e) { FAIL() << e << endl; }
+
 namespace {
 	TEST(Listener, Create) {
-		Context c;
-		Listener l;
+		TEST_BEGIN
+			Context c;
+			Listener l;
 
-		Vertex pos(0.0f, 0.0f, 0.0f),
-				vel(0.0f, 0.0f, 0.0f),
-				at(0.0f, 0.0f, -1.0f),
-				up(0.0f, 1.0f, 0.0f);
+			Vertex pos(0.0f, 0.0f, 0.0f),
+					vel(0.0f, 0.0f, 0.0f),
+					at(0.0f, 0.0f, -1.0f),
+					up(0.0f, 1.0f, 0.0f);
 
-		EXPECT_EQ(l.Gain(), 1.0f);
-		EXPECT_EQ(l.Position(), pos);
-		EXPECT_EQ(l.Velocity(), vel);
-		EXPECT_EQ(l.LookAt(), at);
-		EXPECT_EQ(l.Up(), up);
+			EXPECT_EQ(l.Gain(), 1.0f);
+			EXPECT_EQ(l.Position(), pos);
+			EXPECT_EQ(l.Velocity(), vel);
+			EXPECT_EQ(l.LookAt(), at);
+			EXPECT_EQ(l.Up(), up);
+		TEST_END
 	}
 }
