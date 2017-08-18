@@ -8,6 +8,7 @@
 
 using namespace Entropy::Aoede;
 using namespace std;
+using namespace Entropy;
 
 Sound::Sound(const string &name)
 	: _data(name, bind(&Sound::DataCb, this, placeholders::_1, placeholders::_2)), _player(), _sources(), _buffers(), _loop(nullptr), _playing(false), _done(false)
