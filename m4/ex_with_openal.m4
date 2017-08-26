@@ -8,7 +8,7 @@ AC_DEFUN([EX_WITH_OPENAL], [
 		[with_openal=check]
 	)
 
-	AS_IF([test "x$with_openal" == xno], [AC_MSG_FAILURE([openal is required])],
+	AS_IF([test "x$with_openal" = xno], [AC_MSG_FAILURE([openal is required])],
 		[
 			test "x$with_openal" != xyes -a "x$with_openal" != xcheck && OPENAL_LDFLAGS="-L$with_openal/lib" && OPENAL_CPPFLAGS="-L$with_openal/include"
 			EX_CHECK_LIBRARY([OPENAL], ["AL/al.h"], [openal], [], [AC_MSG_FAILURE(["openal: failed to find al"])])

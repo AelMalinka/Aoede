@@ -8,7 +8,7 @@ AC_DEFUN([EX_WITH_FLAC], [
 		[with_flac=check],
 	)
 
-	AS_IF([test "x$with_flac" == xno], [AC_MSG_FAILURE([flac is required])],
+	AS_IF([test "x$with_flac" = xno], [AC_MSG_FAILURE([flac is required])],
 		[
 			test "x$with_flac" != xyes -a "x$with_flac" != xcheck && FLAC_LDFLAGS="-L$with_flac/lib" && FLAC_CPPFLAGS="-L$with_flac/include"
 			EX_CHECK_LIBRARY([FLAC], ["FLAC++/decoder.h"], [FLAC++], [], [AC_MSG_FAILURE(["flac: failed to find FLAC"])])
