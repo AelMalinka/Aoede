@@ -75,17 +75,21 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
     </ClCompile>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)..\..\..\External\flac\objs\release\lib\libFLAC_dynamic.dll" "$(OutDir)\libFLAC_dynamic.dll"
+copy /Y "$(SolutionDir)..\..\..\External\flac\objs\release\lib\libFLAC++_dynamic.dll" "$(OutDir)\libFLAC++_dynamic.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
       <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
     </ClCompile>
@@ -97,13 +101,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Release;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)..\..\..\External\flac\objs\release\lib\libFLAC_dynamic.dll" "$(OutDir)\libFLAC_dynamic.dll"
+copy /Y "$(SolutionDir)..\..\..\External\flac\objs\release\lib\libFLAC++_dynamic.dll" "$(OutDir)\libFLAC++_dynamic.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -112,7 +120,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Release;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>

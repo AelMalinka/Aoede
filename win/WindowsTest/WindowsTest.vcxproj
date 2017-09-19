@@ -75,12 +75,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;F:\Source\Repos\Aoede\win\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;F:\Source\Repos\Aoede\win\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(OutDir);F:\Source\boost\stage\lib;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug\ZLib;F:\Source\libuv\Debug\lib;F:\Source\OpenAL\libs\Win32;F:\Source\flac\objs\debug\lib;F:\Source\libogg-1.3.2\win32\VS2010\Win32\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Entropy.lib;libpng.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;OpenAL32.lib;libogg_static.lib;libFLAC++_dynamic.lib;libFLAC_dynamic.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>libcmtd.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(OutDir);F:\Source\External\boost\stage\lib;F:\Source\External\libpng\projects\vstudio\Release Library;F:\Source\External\libuv\Release\lib;F:\Source\External\flac\objs\release\lib;F:\Source\External\ogg\win32\VS2010\Win32\Release;F:\Source\External\OpenAL\libs\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Entropy.lib;libpng16.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libFLAC_dynamic.lib;libFLAC++_dynamic.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -88,11 +89,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;F:\Source\Repos\Aoede\win\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;F:\Source\Repos\Aoede\win\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(OutDir);F:\Source\boost\stage\lib;F:\Source\OpenAL\libs\Win64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Entropy.lib;libpng.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libogg_static.lib;libFLAC++_static.lib;libFLAC_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Entropy.lib;libpng16.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libFLAC_dynamic.lib;libFLAC++_dynamic.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,13 +105,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;F:\Source\Repos\Aoede\win\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;F:\Source\Repos\Aoede\win\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(OutDir);F:\Source\boost\stage\lib;F:\Source\OpenAL\libs\Win32</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Entropy.lib;libpng.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libogg_static.lib;libFLAC++_static.lib;libFLAC_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);F:\Source\External\boost\stage\lib;F:\Source\External\libpng\projects\vstudio\Release Library;F:\Source\External\libuv\Release\lib;F:\Source\External\flac\objs\release\lib;F:\Source\External\ogg\win32\VS2010\Win32\Release;F:\Source\External\OpenAL\libs\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Entropy.lib;libpng16.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libFLAC_dynamic.lib;libFLAC++_dynamic.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,13 +122,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>F:\Source\boost;F:\Source\libpng;F:\Source\libpng\projects\visualc71\Win32_DLL_Debug;F:\Source\Repos\Entropy\win\include;F:\Source\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\OpenAL\include;F:\Source\glm;F:\Source\flac\include;F:\Source\libogg\include;F:\Source\Repos\Aoede\win\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;F:\Source\Repos\Aoede\win\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(OutDir);F:\Source\boost\stage\lib;F:\Source\OpenAL\libs\Win64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Entropy.lib;libpng.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libogg_static.lib;libFLAC++_static.lib;libFLAC_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Entropy.lib;libpng16.lib;zlib.lib;Tethys.lib;libuv.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;userenv.lib;Aoede.lib;libFLAC_dynamic.lib;libFLAC++_dynamic.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
