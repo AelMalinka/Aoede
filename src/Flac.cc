@@ -13,9 +13,21 @@ Flac::abort_t Flac::Abort;
 Flac::Flac(const string &name, const function<void(const Flac &, const int32_t *const [])> &cb)
 	: Timer(chrono::milliseconds(1)), File(), _cb(cb)
 {
-	init_ogg(name);
+	// 2017-09-19 ARM NOTE: Windows is corrupting this if passed across as a string
+	switch(init_ogg(name.c_str())) {
+		case FLAC__STREAM_DECODER_INIT_STATUS_OK:
+		break;
+		case FLAC__STREAM_DECODER_INIT_STATUS_UNSUPPORTED_CONTAINER:
+			ENTROPY_THROW(Exception("Failed to initialzie flac: unsupport container"));
+		case FLAC__STREAM_DECODER_INIT_STATUS_MEMORY_ALLOCATION_ERROR:
+			ENTROPY_THROW(Exception("Failed to initialize flac: memory allocation error"));
+		case FLAC__STREAM_DECODER_INIT_STATUS_ERROR_OPENING_FILE:
+			ENTROPY_THROW(Exception("Failed to initialize flac: unable to open file"));
+		default:
+			ENTROPY_THROW(Exception("Failed to initialze flac"));
+	}
 	if(!process_until_end_of_metadata()) {
-		ENTROPY_THROW(Exception("Failed to initialize Flac"));
+		ENTROPY_THROW(Exception("Failed to parse metadata for flac file"));
 	}
 }
 
