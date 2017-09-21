@@ -77,7 +77,8 @@ endif
 TESTSUITE = $(srcdir)/test/testsuite
 
 TESTSUITE_FILES = \
-	$(srcdir)/test/al.at
+	$(srcdir)/test/al.at \
+	$(srcdir)/test/basic.at
 
 EXTRA_DIST = $(TESTSUITE_FILES) \
 	$(srcdir)/test/testsuite.at \
