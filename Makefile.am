@@ -41,6 +41,9 @@ noinst_PROGRAMS = \
 
 check_PROGRAMS =
 
+all-local:
+	test -d data || $(LN_S) $(top_srcdir)/data $(builddir)/data
+
 play_SOURCES = examples/play.cc
 play_LDADD = libaoede.la
 
@@ -51,7 +54,8 @@ check_PROGRAMS += \
 	al-device \
 	al-listener \
 	al-source \
-	basic-application
+	basic-application \
+	basic-sound
 
 gtestLDADD = $(GTEST_LIBS) -lgtest_main libaoede.la
 
@@ -72,6 +76,9 @@ al_listener_LDADD = $(gtestLDADD)
 
 basic_application_SOURCES = test/basic/application.cc
 basic_application_LDADD = $(gtestLDADD)
+
+basic_sound_SOURCES = test/basic/sound.cc
+basic_sound_LDADD = $(gtestLDADD)
 endif
 
 TESTSUITE = $(srcdir)/test/testsuite

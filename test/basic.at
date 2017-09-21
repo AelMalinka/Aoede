@@ -7,3 +7,9 @@ AT_SETUP([Application Tests])
 AT_SKIP_IF([test -z $GTEST])
 AT_CHECK([basic-application], [], [ignore], [ignore])
 AT_CLEANUP
+
+AT_SETUP([Sound Tests])
+AT_SKIP_IF([test -z $GTEST])
+AT_CHECK([ln -s ${BUILD}/data data])
+AT_CHECK([basic-sound], [], [ignore], [ignore])
+AT_CLEANUP
