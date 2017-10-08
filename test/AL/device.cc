@@ -21,7 +21,8 @@ namespace {
 		TEST_END
 	}
 
-	TEST(Device, Soft) {
+	// 2017-10-08 AMR TODO: Is this useful and/or necesary
+	TEST(Device, DISABLED_Soft) {
 		TEST_BEGIN
 			Device d("OpenAL Soft");
 
