@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Aoede", "Aoede\Aoede.vcxproj", "{160F8F3F-597C-44F5-A38C-6916F2EC88A5}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,12 +16,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tethys", "..\..\Tethys\win\
 		{25B626B2-690C-4EEE-A3A9-2AA486E31542} = {25B626B2-690C-4EEE-A3A9-2AA486E31542}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WindowsTest", "WindowsTest\WindowsTest.vcxproj", "{A6F8CB1D-3813-42BB-BCF2-FBC5899D6880}"
-	ProjectSection(ProjectDependencies) = postProject
-		{160F8F3F-597C-44F5-A38C-6916F2EC88A5} = {160F8F3F-597C-44F5-A38C-6916F2EC88A5}
-		{23BEC3A9-1AD4-49FA-8D60-0A0FFFA64F17} = {23BEC3A9-1AD4-49FA-8D60-0A0FFFA64F17}
-		{25B626B2-690C-4EEE-A3A9-2AA486E31542} = {25B626B2-690C-4EEE-A3A9-2AA486E31542}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "play", "C:\Users\malinka\Source\Repos\Aoede\win\play\play.vcxproj", "{A6F8CB1D-3813-42BB-BCF2-FBC5899D6880}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

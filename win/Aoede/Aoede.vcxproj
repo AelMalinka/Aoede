@@ -153,6 +153,11 @@ copy /Y "$(SolutionDir)..\..\..\External\flac\objs\release\lib\libFLAC++_dynamic
     <ClInclude Include="..\..\src\Sound.hh" />
     <ClInclude Include="..\..\src\Types.hh" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Tethys\win\Tethys\Tethys.vcxproj">
+      <Project>{23bec3a9-1ad4-49fa-8d60-0a0fffa64f17}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
