@@ -15,7 +15,7 @@
 		namespace Aoede
 		{
 			class Application :
-				public virtual Tethys::Application
+				public Tethys::Application
 			{
 				public:
 					Application();
