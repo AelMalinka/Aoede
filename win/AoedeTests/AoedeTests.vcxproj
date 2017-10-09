@@ -75,7 +75,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -85,6 +85,7 @@
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>F:\Source\External\boost\stage\lib;F:\Source\External\libuv\Release\lib;F:\Source\External\OpenAL\libs\Win32;F:\Source\External\flac\objs\Release\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers />
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,7 +100,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -120,7 +121,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
@@ -132,6 +133,7 @@
       <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <AdditionalLibraryDirectories>F:\Source\External\boost\stage\lib;F:\Source\External\libuv\Release\lib;F:\Source\External\OpenAL\libs\Win32;F:\Source\External\flac\objs\Release\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers />
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,7 +146,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\src;F:\Source\External\boost;F:\Source\External\libpng;F:\Source\Repos\Entropy\win\include;F:\Source\External\libuv\include;F:\Source\Repos\Tethys\win\include;F:\Source\External\flac\include;F:\Source\External\ogg\include;F:\Source\External\OpenAL\include;F:\Source\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)a\b\%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
