@@ -49,7 +49,7 @@ int main(int ArgC, char *ArgV[])
 }
 
 ::Application::Application(const int argc, char *argv[])
-	: Entropy::Aoede::Application(argc, argv)
+	: Entropy::Tethys::Application(argc, argv), Entropy::Aoede::Application(argc, argv)
 {
 	if(ArgC() != 2) {
 		_usage = make_shared<Usage>(ArgV()[0]);
