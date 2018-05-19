@@ -14,7 +14,7 @@ Flac::Flac(const string &name, const function<void(const Flac &, const int32_t *
 	: Timer(chrono::milliseconds(1)), File(), _cb(cb)
 {
 	// 2017-09-19 ARM NOTE: Windows is corrupting this if passed across as a string
-	switch(init_ogg(name.c_str())) {
+	switch(init(name.c_str())) {
 		case FLAC__STREAM_DECODER_INIT_STATUS_OK:
 		break;
 		case FLAC__STREAM_DECODER_INIT_STATUS_UNSUPPORTED_CONTAINER:

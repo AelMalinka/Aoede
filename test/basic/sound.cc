@@ -12,6 +12,6 @@ using namespace std;
 
 namespace {
 	TEST(Sound, Create) {
-		Sound s("data/sound.oga");
+		Sound s("data/sound.flac");
 	}
 }
